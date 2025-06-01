@@ -26,7 +26,7 @@ This project implements simple linear regression using the least squares method,
 
 1. Clone the repository:
     ```sh
-    git clone <your-repo-url>
+    git clone https://github.com/tamimmirza/Least-Squares-Linear-Regression.git
     cd Least-Squares Linear Regression
     ```
 
