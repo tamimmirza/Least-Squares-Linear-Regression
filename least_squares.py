@@ -1,6 +1,6 @@
 import numpy as np
 
-def create_synthetic_data(n_samples=100, noise=0.1):
+def generate_data(n_samples=100, noise=0.1):
     """
     Create synthetic data for linear regression.
     
