@@ -54,3 +54,17 @@ def error_function(Y_pred, Y_true):
     float: Mean squared error.
     """
     return np.mean((Y_pred - Y_true) ** 2)
+
+def forward(X, W, b):
+    """
+    Forward pass to compute predictions.
+    
+    Parameters:
+    X (np.ndarray): Input features.
+    W (np.ndarray): Weights of the model.
+    b (float): Bias term.
+    
+    Returns:
+    np.ndarray: Predicted output values.
+    """
+    return X @ W + b
