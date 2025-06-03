@@ -45,18 +45,18 @@ def train_test_split(X, y, test_size=0.2):
     
     return X_train, X_test, y_train, y_test
 
-def error_function(Y_pred, Y_true):
+def loss_function(y_pred, y_true):
     """
-    Calculate the mean squared error between predicted and true values.
+    Compute the mean squared error loss.
     
     Parameters:
-    Y_pred (np.ndarray): Predicted output values.
-    Y_true (np.ndarray): True output values.
+    y_pred (np.ndarray): Predicted output values.
+    y_true (np.ndarray): True output values.
     
     Returns:
-    float: Mean squared error.
+    float: Mean squared error between predicted and true values.
     """
-    return np.mean((Y_pred - Y_true) ** 2)
+    return np.mean((y_pred - y_true) ** 2)
 
 def forward_pass(X, W, b):
     """
