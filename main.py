@@ -14,6 +14,5 @@ y_pred = forward_pass(X_train, W, b)
 # Calculate the error between predicted and true values
 error = error_function(y_pred, y_train)
 
-# Print the results
-print("Predicted values:", y_pred)
-print("True values:", y_train)
+# Print the error
+print(f"Mean Squared Error: {error:.4f}")
