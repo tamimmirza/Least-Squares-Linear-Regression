@@ -2,7 +2,7 @@ import numpy as np
 
 def generate_data(n_samples=100, noise=0.1):
     """
-    Create synthetic data for linear regression.
+    Generate synthetic linear data for regression.
     
     Parameters:
     n_samples (int): Number of samples to generate.
@@ -10,12 +10,15 @@ def generate_data(n_samples=100, noise=0.1):
     
     Returns:
     X (np.ndarray): Input features of shape (n_samples, 1).
-    y (np.ndarray): Output targets of shape (n_samples,).
+    Y (np.ndarray): Output targets of shape (n_samples,).
     """
-    np.random.seed(0)
+    np.random.seed(42)  # For reproducibility
     X = np.random.rand(n_samples, 1) * 10  # Random values between 0 and 10
-    y = 2 * X.squeeze() + 1 + np.random.normal(0, noise, n_samples)  # Linear relation with noise
-    return X, y
+    true_slope = 2.0
+    true_intercept = 3.0
+    Y = true_slope * X.flatten() + true_intercept + np.random.normal(0, noise, n_samples)
+    
+    return X, Y
     
 def train_test_split(X, y, test_size=0.2):
     """
@@ -55,16 +58,16 @@ def error_function(Y_pred, Y_true):
     """
     return np.mean((Y_pred - Y_true) ** 2)
 
-def forward(X, W, b):
+def forward_pass(X, W, b):
     """
     Forward pass to compute predictions.
     
     Parameters:
     X (np.ndarray): Input features.
-    W (np.ndarray): Weights of the model.
-    b (float): Bias term.
+    W (float): Weight of the linear model.
+    b (float): Bias of the linear model.
     
     Returns:
     np.ndarray: Predicted output values.
     """
-    return X @ W + b
+    return W * X.flatten() + b
