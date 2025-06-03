@@ -14,8 +14,8 @@ def generate_data(n_samples=100, noise=0.1):
     """
     np.random.seed(42)  # For reproducibility
     X = np.random.rand(n_samples, 1) * 10  # Random values between 0 and 10
-    true_slope = 2.0
-    true_intercept = 3.0
+    true_slope = 2.0 # True slope (weight) of the linear function
+    true_intercept = 3.0 # True intercept (bias) of the linear function
     Y = true_slope * X.flatten() + true_intercept + np.random.normal(0, noise, n_samples)
     
     return X, Y
