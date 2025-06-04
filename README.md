@@ -49,7 +49,7 @@ This project implements simple linear regression using the least squares method,
 from least_squares import create_synthetic_data, train_test_split, error_function
 
 # Generate data
-X, y = create_synthetic_data(n_samples=100, noise=0.2)
+X, Y = create_synthetic_data(n_samples=100, noise=0.2)
 
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(X, y)
